@@ -1,0 +1,28 @@
+# Build output
+bin/
+obj/
+
+# VS files
+*.suo
+*.DotSettings
+*.user
+*.vstemplate
+!src/CodeGen/ODataT4CodeGenerator.vstemplate
+*.lock.json
+
+# TFS files
+*.vspscc
+
+# Test results
+**/TestResults/
+test/packages/
+*BenchmarkDotNet.Artifacts*
+
+# VS2015 IDE generated files
+sln/*.ide/
+.vs/
+**/Temp/Desktop
+*.cache
+
+# Symbol
+*.pdb

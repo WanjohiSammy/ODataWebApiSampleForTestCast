@@ -1,0 +1,46 @@
+# For HTTPS
+@HostAddress = https://localhost:7007
+
+# For HTTP
+# @HostAddress = http://localhost:5175
+
+### Get metadata
+GET {{HostAddress}}/odata/$metadata
+Accept: application/json
+
+###
+GET {{HostAddress}}/odata/Customers
+Accept: application/json
+
+###
+GET {{HostAddress}}/odata/Customers?$Expand=Orders
+Accept: application/json
+
+###
+GET {{HostAddress}}/odata/Customers?$Expand=Orders($Select=Amount)
+Accept: application/json
+
+###
+GET {{HostAddress}}/odata/Customers?$Expand=Orders&$Select=Orders
+Accept: application/json
+
+###
+GET {{HostAddress}}/odata/Customers(1)
+Accept: application/json
+
+###
+GET {{HostAddress}}/odata/Customers(1)/GetCustomerOrdersTotalAmount
+Accept: application/json
+
+###
+GET {{HostAddress}}/odata/Customers/GetCustomerByName(name='Customer1')
+Accept: application/json
+
+###
+POST {{HostAddress}}/odata/Customers
+Content-Type: application/json
+
+{
+    "Id": 0,
+    "Name": "John Doe"
+}
